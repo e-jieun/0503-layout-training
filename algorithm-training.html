@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes move-cross{
+      0%{
+        top: 0vh;
+        left : 0vh;
+      }
+      50%{
+        top: 20vh;
+        left : 20vh;
+      }
+      100%{
+        top: 0vh;
+        left : 0vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <!-- <button>클릭하면 배경색이 바뀝니다</button> -->
+  </div>
+
+  <script>
+    // *
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+
+    // get #root
+    const root = document.getElementById('root');
+    console.log(root);
+    let hun = 100;
+    root.style.width = `${hun}vw`;
+    root.style.height = `${hun}vh`;
+
+    // !
+    // create buttonElement
+    let buttonElement = document.createElement('button');
+    console.dir(buttonElement);
+    // #root>button
+    root.appendChild(buttonElement);
+    // buttonElement.innerHTML
+    buttonElement.innerHTML = '이동하는 부분';
+    // !
+
+    // 누르면 이동할 수 있도록 버튼을 만들어준다
+    let moveElement = document.createElement('div');
+    console.dir(moveElement);
+    // #root>div
+    root.appendChild(moveElement);
+    moveElement.innerHTML = '이곳을 클릭하면 저 버튼이 이동합니다';
+    
+
+    // get button
+    // const button = document.getElementsByTagName('button');
+    // console.log(button);
+
+    // button[0]이 버튼 태그다 -> 이 부분도 배열
+    // const buttonItem = button[0];
+    // console.log(buttonItem);
+
+    // // buttonItem에 클릭 이벤트를 생성해준다
+    // buttonItem.addEventListener('click', function(){
+    //   root.style.backgroundColor = '#414141';
+    // });
+
+    let colorArr = ['yellow', 'red', 'green', 'blue'];
+    // // buttonElement에 클릭 이벤트를 달아준다
+    // buttonElement.addEventListener('click', function(){
+    //   // 클릭하면 #root의 배경색을 #c4c4c4로 할당해준다
+    //   root.style.backgroundColor = '#c4c4c4';
+    // });
+
+    // 클릭해서 버튼 요소가 생성되는 
+    // for
+    moveElement.addEventListener('click', function(){
+      buttonElement.style.position = 'absolute';
+      buttonElement.style.animation = '3s move-cross';
+      // #root backgroud-color: green;
+      root.style.backgroundColor = colorArr[2];
+      console.log(root.style);
+      // console.log(buttonElement);
+      
+    });
+    
+  </script>
+</body>
+</html>

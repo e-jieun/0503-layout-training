@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>0503 layout training</title>
   <style>
     *{margin: 0; padding: 0;}
+    .flex-center-center{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     #root{
       width: 100vw;
       height: 100vh;
@@ -26,9 +31,9 @@
     #root>div:nth-child(2){
       width: inherit;
       height: 10%;
-      display: flex;
+      /* display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center; */
       background-color: transparent;      
       z-index: -1;
     }
@@ -36,6 +41,7 @@
       font-size: 5rem;
     }
     span{
+      /* !span: inline;의 값을 갖고 있는 태그여서 transform: rotate(-deg); 적용 안됐었음! */
       display: inline-block;
       transform: rotate(180deg);
       position: relative;
@@ -59,7 +65,7 @@
 <body>
   <div id="root">
     <div></div>
-    <div>
+    <div class="flex-center-center">
       <div>WH<span>A</span>TEVERY</div>
       <div>
         <p>O</p>
