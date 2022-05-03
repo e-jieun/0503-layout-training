@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #root>div{
+      width: inherit;
+      height: 45%;
+      background-color: #fff;
+    }
+    #root>div:nth-child(1){
+      position: relative;
+      top: 5vh;
+    }
+    #root>div:nth-child(2){
+      width: inherit;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;      
+      z-index: -1;
+    }
+    #root>div:nth-child(2)>div{
+      font-size: 5rem;
+    }
+    span{
+      display: inline-block;
+      transform: rotate(180deg);
+      position: relative;
+      top: 1vh;
+    }
+    #root>div:nth-child(2){
+      position: absolute;
+      top: 48vh;
+    }
+    #root>div:nth-child(2)>div:nth-child(2)>p:nth-child(1){
+      position: relative;
+      top: -3vh;
+    }
+    #root>div:nth-child(2)>div:nth-child(2)>p:nth-child(2){
+      position: absolute;
+      top: 0vh;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div>
+      <div>WH<span>A</span>TEVERY</div>
+      <div>
+        <p>O</p>
+        <p>O</p>
+      </div>
+      <div><span>U</span>W<span>A</span>NT</div>
+    </div>
+    <div></div>
+  </div>
+</body>
+</html>
